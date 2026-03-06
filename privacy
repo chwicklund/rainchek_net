@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — RainChek</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Fraunces:ital,wght@0,200;0,300;0,400;1,200;1,300&display=swap');
+    :root {
+      --eggshell: #F4F1EC;
+      --eggshell-dark: #EAE5DC;
+      --eggshell-deeper: #DDD8CE;
+      --cobalt: #0B476C;
+      --cobalt-mid: #011936;
+      --cobalt-light: #777DA7;
+      --cobalt-glow: rgba(26, 58, 107, 0.15);
+      --sage: #4A7C6F;
+      --sage-light: #6BA898;
+      --glass-white: rgba(255, 255, 255, 0.55);
+      --glass-eggshell: rgba(244, 241, 236, 0.65);
+      --glass-border: rgba(255, 255, 255, 0.7);
+      --glass-shadow: rgba(26, 58, 107, 0.12);
+      --text-primary: #1A1A2E;
+      --text-secondary: #4A4A6A;
+      --text-muted: #8A8AA8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--eggshell);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    .section-title {
+      font-family: 'Fraunces', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      margin-top: 80px;
+      margin-bottom: 24px;
+      color: #0B476C;
+      letter-spacing: -0.02em;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: #4A4A6A;
+      margin-bottom: 40px;
+      line-height: 1.65;
+    }
+    .privacy-content {
+      background: rgba(255,255,255,0.55);
+      border-radius: 24px;
+      padding: 40px;
+      margin-bottom: 60px;
+      box-shadow: 0 8px 32px rgba(26,58,107,0.08);
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #0B476C;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 1rem;
+      font-weight: 300;
+      color: #4A4A6A;
+      margin-bottom: 18px;
+      line-height: 1.7;
+    }
+    ul {
+      margin-bottom: 18px;
+      padding-left: 20px;
+      color: #4A4A6A;
+      font-size: 1rem;
+      font-weight: 300;
+    }
+    
+  /* ── FOOTER ── */
+  footer {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid #0B476C--- /* 0.08 */;
+    padding: 48px 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-logo {
+    font-family: 'Fraunces', serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--cobalt);
+  }
+
+  .footer-logo span { font-weight: 600; font-style: normal; }
+
+  .footer-logo img {
+    height: 28px;
+    width: auto;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .footer-links a {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--cobalt); }
+
+  .footer-copy {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+    /* Background canvas styles */
+    .bg-canvas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background: var(--eggshell);
+      overflow: hidden;
+    }
+    .bg-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.35;
+      animation: drift 18s ease-in-out infinite alternate;
+    }
+    .bg-blob-1 {
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, var(--cobalt-light), var(--cobalt));
+      top: -200px; right: -150px;
+      animation-delay: 0s;
+    }
+    .bg-blob-2 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, var(--sage-light), var(--sage));
+      bottom: 100px; left: -100px;
+      animation-delay: -6s;
+    }
+    .bg-blob-3 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, var(--cobalt-mid), transparent);
+      top: 50%; left: 40%;
+      animation-delay: -12s;
+    }
+    .bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(#0B476C--- /* 0.04 */ 1px, transparent 1px),
+        linear-gradient(90deg, #0B476C--- /* 0.04 */ 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    @keyframes drift {
+      from { transform: translate(0, 0) scale(1); }
+      to   { transform: translate(40px, 30px) scale(1.08); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background canvas -->
+  
+  <div class="container">
+    <div class="container-inner">
+      
+        <h2>Privacy Policy</h2>
+        <p>Last updated: 2/24/2026<br>This Privacy Policy explains how RainChek ("we," "us," or "our") collects, uses, discloses, and protects your personal information when you visit or interact with our website (the "Site"). By using the Site, you agree to the collection and use of information in accordance with this Privacy Policy.</p>
+      
+        <h2>Information We Collect</h2>
+        <p>We may collect personal information that you voluntarily provide, including: Name, Email address, Phone number, Any information submitted through contact forms, inquiries, or communications. When you access the Site, we may automatically collect certain technical information, such as: IP address, Browser type and version, Device information, Pages visited and usage data, Referring URLs. This data is used for analytics, security, and performance optimization.</p>
+      
+        <h2>How We Use Your Information</h2>
+        <p>We use collected information to: Respond to inquiries and communicate with you; Provide and improve our services; Operate, maintain, and secure the Site; Comply with legal obligations; Analyze website usage and performance. We do not use your personal information for automated decision-making or profiling with legal or significant effects.</p>
+      
+        <h2>Legal Bases for Processing (GDPR)</h2>
+        <p>If you are located in the European Economic Area (EEA), United Kingdom, or Switzerland, we process your personal data under the following lawful bases: Your consent; Performance of a contract or pre-contractual steps; Compliance with legal obligations; Legitimate interests, where those interests do not override your rights.</p>
+      
+        <h2>Cookies and Tracking Technologies</h2>
+        <p>We may use cookies or similar technologies to improve website functionality, analyze traffic, and enhance user experience. You may control or disable cookies through your browser settings. Disabling cookies may limit certain features of the Site.</p>
+      
+        <h2>Data Sharing and Disclosure</h2>
+        <p>We do not sell personal information. We may share personal information with: Service providers who assist in operating the Site or providing services (e.g., hosting, analytics); Legal or regulatory authorities when required by law; Parties involved in a business transfer, merger, or acquisition. All service providers are required to protect personal information and use it only for authorized purposes.</p>
+      
+        <h2>Data Retention</h2>
+        <p>We retain personal information only for as long as necessary to fulfill the purposes described in this Privacy Policy, unless a longer retention period is required or permitted by law.</p>
+      
+        <h2>Data Security</h2>
+        <p>We implement reasonable administrative, technical, and organizational measures to safeguard personal information. However, no method of transmission over the internet or electronic storage is completely secure, and we cannot guarantee absolute security.</p>
+      
+        <h2>International Data Transfers</h2>
+        <p>If you access the Site from outside the United States, your information may be transferred to and processed in the United States or other countries where our service providers operate. We take reasonable steps to ensure appropriate safeguards are in place.</p>
+      
+        <h2>Your Privacy Rights</h2>
+        <p>If you are subject to GDPR, you have the right to: Access your personal data; Correct inaccurate or incomplete data; Request deletion of your data; Restrict or object to processing; Request data portability; Withdraw consent at any time. If you are a California resident, you have the right to: Know what personal information we collect and how it is used; Request access to or deletion of your personal information; Opt out of the sale or sharing of personal information (if applicable); Not be discriminated against for exercising your rights. We do not sell personal information unless explicitly stated otherwise.</p>
+      
+        <h2>Children’s Privacy</h2>
+        <p>This Site is not intended for children under the age of 13 (or 16 where required by applicable law). We do not knowingly collect personal information from children. If we become aware that such information has been collected, we will delete it promptly.</p>
+      
+        <h2>Third-Party Links</h2>
+        <p>The Site may contain links to third-party websites. We are not responsible for the privacy practices or content of those websites. We encourage users to review the privacy policies of any third-party sites they visit.</p>
+      
+        <h2>Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Last updated" date. Continued use of the Site constitutes acceptance of the revised policy.</p>
+      
+    </div>
+  </div>
+  
+  
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        
+          <img src="./static/logos/RainChek.svg" alt="RainChek logo">
+        
+      </div>
+      <ul class="footer-links">
+        <li><a href="/">Return Home</a></li>
+        
+        <li><a href="#">Company</a></li>
+        
+        <li><a href="#">FAQ</a></li>
+        
+        <li><a href="/privacy">Privacy</a></li>
+        
+        <li><a href="#">Terms</a></li>
+        
+      </ul>
+      <div class="footer-copy">© 2026 RainChek, LLC. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

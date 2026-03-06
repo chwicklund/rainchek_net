@@ -21,7 +21,6 @@
 
     "hero": {
         "badge_text": "Now in public beta — trusted by 200+ enterprises",
-        
         "headline": "Safe ticketing that guarantees revenue, rain or shine",
         "subheadline": "RainChek empowers venues to protect their revenue streams, and allows customers to enjoy peace of mind. Our platform offers stress-free ticket refunds - so you can save your customers' nights out and your bottom line.",
         "primary_cta":   {"label": "Learn more", "url": "#"},

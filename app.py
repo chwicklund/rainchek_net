@@ -2,9 +2,11 @@ from datetime import datetime
 from flask import Flask, render_template
 import json
 from jinja2 import Environment, FileSystemLoader
-
+from flask_frozen import Freezer
 
 app = Flask(__name__)
+app.config['FREEZER_DESTINATION'] = 'build' # The output directory
+freezer = Freezer(app)
 
 @app.route('/')
 def index():
@@ -34,5 +36,9 @@ def privacy():
 
     return output
 
+# if __name__ == '__main__':
+#     app.run(debug=True)
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Use the freezer if run directly
+    freezer.freeze()
