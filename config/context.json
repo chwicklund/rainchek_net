@@ -1,0 +1,305 @@
+{
+
+
+    "site": {
+        "company_name": "RainChek",
+        "tagline": "Save your night out with RainChek",
+        "logo_url": "./static/logos/RainChek.svg"               
+    },
+
+    
+    "nav": {
+        "links": [
+            {"label": "Features",  "url": "#features"},
+            {"label": "Platform",  "url": "#platform"},
+            {"label": "Pricing",   "url": "#pricing"},
+            {"label": "About",     "url": "#about"}
+        ],
+        "cta": {"label": "Request demo", "url": "#"}
+    },
+
+
+    "hero": {
+        "badge_text": "Now in public beta — trusted by 200+ enterprises",
+        
+        "headline": "Safe ticketing that guarantees revenue, rain or shine",
+        "subheadline": "RainChek empowers venues to protect their revenue streams, and allows customers to enjoy peace of mind. Our platform offers stress-free ticket refunds - so you can save your customers' nights out and your bottom line.",
+        "primary_cta":   {"label": "Learn more", "url": "#"},
+        "secondary_cta": {"label": "Contact us", "url": "#"},
+        "dashboard": {
+            "title": "Analytics Overview",
+            "metrics": [
+                {"value": "94.2%", "label": "Accuracy rate",   "change": "↑ +3.1% this month"},
+                {"value": "2.4M",  "label": "Requests today",  "change": "↑ +12% from avg"},
+                {"value": "18ms",  "label": "Avg latency",     "change": "↓ −4ms optimized"},
+                {"value": "$31K",  "label": "Cost saved",      "change": "↑ This quarter"}
+            ],
+            
+            "chart_bars": [40, 55, 45, 70, 60, 85, 75, 90, 80, 95, 88, 100]
+        },
+        "concert_stock_photo" : {
+                "url": "./static/stock/pexels-lstan-2147029.jpg",
+                "alt": "Stock image of happy customers enjoying a concert",
+                "style": "width:100%;height:auto;border-radius:16px;"
+        }
+    },
+
+    "logos": {
+        "label": "Trusted by forward-thinking teams at",
+        "customers": [
+            {"name": "Meridian",    "logo_url": ""},
+            {"name": "Vantara",     "logo_url": ""},
+            {"name": "Solstice Co.","logo_url": ""},
+            {"name": "Orrery",      "logo_url": ""},
+            {"name": "Cascada",     "logo_url": ""},
+            {"name": "Northform",   "logo_url": ""}
+        ]
+    },
+
+    "features": {
+        "section_label": "Our Mission",
+        "headline": "We worry about reimbursements so <em>you</em> don't have to",
+        "subheadline": "We manage requests for refunds seamlessly, and ensure your customers are taken care of.",
+        "subjects": [
+            {
+                "icon": "💬",
+                "name": "User-Based Requests",
+                "description": "Users can request their own refunds, so you don't need to worry about managing individual requests."
+            },
+            {
+                "icon": "🔁",
+                "name": "Hands-Off Automation",
+                "description": "Requests are handled automatically with our robust system, so you can focus on what matters most - creating unforgettable experiences for your customers."
+            },
+            {
+                "icon": "💰",
+                "name": "Seamless Payouts",
+                "description": "We partner with leading payment processors to ensure that payouts are smooth and stress-free."
+            }
+        ]
+    },
+
+    "platform": {
+        "section_label": "Platform",
+        "headline": "A unified view of <em>every</em> customer interaction",
+        "body_paragraph_1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vestibulum congue tellus at fringilla. Curabitur vitae semper sem, eu convallis est. Phasellus habitant morbi tristique senectus et netus.",
+        "body_paragraph_2": "Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
+        "cta": {"label": "Explore platform", "url": "#"},
+        "customer_rows": [
+            {
+                "avatar_gradient": "linear-gradient(135deg,#4A7FD4,#1A3A6B)",
+                "avatar_url": "",
+                "initials": "AC",
+                "name": "Acme Corporation — Enterprise",
+                "meta": "Last active 2 min ago · 142 users",
+                "tag_label": "Active",
+                "tag_style": "green"
+            },
+            {
+                "avatar_gradient": "linear-gradient(135deg,#6BA898,#4A7C6F)",
+                "avatar_url": "",
+                "initials": "VL",
+                "name": "Vantara Logistics — Pro",
+                "meta": "Last active 15 min ago · 38 users",
+                "tag_label": "Pro",
+                "tag_style": "blue"
+            },
+            {
+                "avatar_gradient": "linear-gradient(135deg,#E8B84B,#C08020)",
+                "avatar_url": "",
+                "initials": "OL",
+                "name": "Orrery Labs — Starter",
+                "meta": "Trial expires in 8 days · 12 users",
+                "tag_label": "Trial",
+                "tag_style": "amber"
+            },
+            {
+                "avatar_gradient": "linear-gradient(135deg,#B84A7F,#7B1A4A)",
+                "avatar_url": "",
+                "initials": "NS",
+                "name": "Northform Systems — Enterprise",
+                "meta": "Last active 1 hr ago · 284 users",
+                "tag_label": "Active",
+                "tag_style": "green"
+            },
+            {
+                "avatar_gradient": "linear-gradient(135deg,#7FC4E8,#2B7BA8)",
+                "avatar_url": "",
+                "initials": "SC",
+                "name": "Solstice Co. — Pro",
+                "meta": "Onboarding · 7 users",
+                "tag_label": "Pro",
+                "tag_style": "blue"
+            }
+        ]
+    },
+
+    "pricing": {
+        "section_label": "Pricing",
+        "headline": "Simple, <em>transparent</em> pricing",
+        "subheadline": "No hidden fees. Cancel anytime. Lorem ipsum dolor sit amet, consectetur adipiscing elit praesent.",
+        "plans": [
+            {
+                "name": "Starter",
+                "price_prefix": "$",
+                "price": "49",
+                "period": "per seat / month, billed annually",
+                "featured": false,
+                "features": [
+                    "Up to 25 team members",
+                    "5 automated workflows",
+                    "Core analytics dashboard",
+                    "Standard integrations (Slack, Jira)",
+                    "Email support, 48hr response"
+                ],
+                "cta": {"label": "Get started", "url": "#"}
+            },
+            {
+                "name": "Professional",
+                "price_prefix": "$",
+                "price": "129",
+                "period": "per seat / month, billed annually",
+                "featured": true,
+                "features": [
+                    "Unlimited team members",
+                    "Unlimited workflows & automation",
+                    "Advanced AI analytics suite",
+                    "All integrations + custom API",
+                    "Priority support, 4hr response",
+                    "Custom onboarding session"
+                ],
+                "cta": {"label": "Get started", "url": "#"}
+            },
+            {
+                "name": "Enterprise",
+                "price_prefix": "",
+                "price": "Custom",
+                "period": "Volume pricing, negotiated contract",
+                "featured": false,
+                "features": [
+                    "Everything in Professional",
+                    "Dedicated infrastructure",
+                    "SOC 2 Type II & HIPAA ready",
+                    "SLA guarantees (99.99% uptime)",
+                    "Dedicated CSM & 24/7 support",
+                    "Custom SLA & data residency"
+                ],
+                "cta": {"label": "Contact sales", "url": "#"}
+            }
+        ]
+    },
+
+
+    "testimonials": {
+        "section_label": "Testimonials",
+        "headline": "Loved by <em>operators</em> at scale",
+        "items": [
+            {
+                "rating": 5,
+                "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus. Curabitur vitae semper sem, eu convallis est. Nunc ultricies est volutpat.",
+                "author": {
+                    "name": "Marcus Reynolds",
+                    "role": "VP Engineering, Acme Corp",
+                    "initials": "MR",
+                    "avatar_url": "",
+                    "avatar_gradient": "linear-gradient(135deg,#4A7FD4,#4A7C6F)"
+                }
+            },
+            {
+                "rating": 5,
+                "quote": "Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo. Tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus et ullamcorper.",
+                "author": {
+                    "name": "Sofia Chen",
+                    "role": "CTO, Solstice Co.",
+                    "initials": "SC",
+                    "avatar_url": "",
+                    "avatar_gradient": "linear-gradient(135deg,#6BA898,#4A7C6F)"
+                }
+            },
+            {
+                "rating": 5,
+                "quote": "Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+                "author": {
+                    "name": "James Whitfield",
+                    "role": "Head of Ops, Northform",
+                    "initials": "JW",
+                    "avatar_url": "",
+                    "avatar_gradient": "linear-gradient(135deg,#C07FD4,#6B1A8B)"
+                }
+            }
+        ]
+    },
+
+    "cta": {
+        "headline": "Ready to transform <em>your events?</em>",
+        "subheadline": "Inquire today to move faster, work smarter, and grow confidently.",
+        "primary":   {"label": "Contact Us", "url": "#"}
+    },
+
+    "footer": {
+        "links": [
+            {"label": "Company", "url": "#"},
+            {"label": "FAQ", "url": "#"},
+            {"label": "Privacy", "url": "/privacy"},
+            {"label": "Terms",   "url": "#"}
+        ],
+        "copyright": "© 2026 RainChek, LLC. All rights reserved."
+    },
+
+    "privacy" : {
+        "sections" : [
+            {
+                "title": "Privacy Policy",
+                "content": "Last updated: 2/24/2026<br>This Privacy Policy explains how RainChek (\"we,\" \"us,\" or \"our\") collects, uses, discloses, and protects your personal information when you visit or interact with our website (the \"Site\"). By using the Site, you agree to the collection and use of information in accordance with this Privacy Policy."
+            },
+            {
+                "title": "Information We Collect",
+                "content": "We may collect personal information that you voluntarily provide, including: Name, Email address, Phone number, Any information submitted through contact forms, inquiries, or communications. When you access the Site, we may automatically collect certain technical information, such as: IP address, Browser type and version, Device information, Pages visited and usage data, Referring URLs. This data is used for analytics, security, and performance optimization."
+            },
+            {
+                "title": "How We Use Your Information",
+                "content": "We use collected information to: Respond to inquiries and communicate with you; Provide and improve our services; Operate, maintain, and secure the Site; Comply with legal obligations; Analyze website usage and performance. We do not use your personal information for automated decision-making or profiling with legal or significant effects."
+            },
+            {
+                "title": "Legal Bases for Processing (GDPR)",
+                "content": "If you are located in the European Economic Area (EEA), United Kingdom, or Switzerland, we process your personal data under the following lawful bases: Your consent; Performance of a contract or pre-contractual steps; Compliance with legal obligations; Legitimate interests, where those interests do not override your rights."
+            },
+            {
+                "title": "Cookies and Tracking Technologies",
+                "content": "We may use cookies or similar technologies to improve website functionality, analyze traffic, and enhance user experience. You may control or disable cookies through your browser settings. Disabling cookies may limit certain features of the Site."
+            },
+            {
+                "title": "Data Sharing and Disclosure",
+                "content": "We do not sell personal information. We may share personal information with: Service providers who assist in operating the Site or providing services (e.g., hosting, analytics); Legal or regulatory authorities when required by law; Parties involved in a business transfer, merger, or acquisition. All service providers are required to protect personal information and use it only for authorized purposes."
+            },
+            {
+                "title": "Data Retention",
+                "content": "We retain personal information only for as long as necessary to fulfill the purposes described in this Privacy Policy, unless a longer retention period is required or permitted by law."
+            },
+            {
+                "title": "Data Security",
+                "content": "We implement reasonable administrative, technical, and organizational measures to safeguard personal information. However, no method of transmission over the internet or electronic storage is completely secure, and we cannot guarantee absolute security."
+            },
+            {
+                "title": "International Data Transfers",
+                "content": "If you access the Site from outside the United States, your information may be transferred to and processed in the United States or other countries where our service providers operate. We take reasonable steps to ensure appropriate safeguards are in place."
+            },
+            {
+                "title": "Your Privacy Rights",
+                "content": "If you are subject to GDPR, you have the right to: Access your personal data; Correct inaccurate or incomplete data; Request deletion of your data; Restrict or object to processing; Request data portability; Withdraw consent at any time. If you are a California resident, you have the right to: Know what personal information we collect and how it is used; Request access to or deletion of your personal information; Opt out of the sale or sharing of personal information (if applicable); Not be discriminated against for exercising your rights. We do not sell personal information unless explicitly stated otherwise."
+            },
+            {
+                "title": "Children’s Privacy",
+                "content": "This Site is not intended for children under the age of 13 (or 16 where required by applicable law). We do not knowingly collect personal information from children. If we become aware that such information has been collected, we will delete it promptly."
+            },
+            {
+                "title": "Third-Party Links",
+                "content": "The Site may contain links to third-party websites. We are not responsible for the privacy practices or content of those websites. We encourage users to review the privacy policies of any third-party sites they visit."
+            },
+            {
+                "title": "Changes to This Privacy Policy",
+                "content": "We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated \"Last updated\" date. Continued use of the Site constitutes acceptance of the revised policy."
+            }
+        ]
+    }
+}
