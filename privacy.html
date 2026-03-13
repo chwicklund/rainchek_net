@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy — {{ site.company_name }}</title>
+<title>Privacy Policy — RainChek</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -343,18 +343,16 @@
 <!-- Navigation -->
 <nav>
   <div class="nav-logo">
-    {% if site.logo_url %}
-      <img src="{{ site.logo_url }}" style="height: 40px; width: auto;" alt="{{ site.company_name }} logo">
-    {% else %}
-      <span>{{ site.company_name }}</span>
-    {% endif %}
+    
+      <img src="./static/logos/RainChek.svg" style="height: 40px; width: auto;" alt="RainChek logo">
+    
   </div>
   <ul class="nav-links">
-    {% for link in nav.sub_links %}
-    <li><a href="{{ link.url }}">{{ link.label }}</a></li>
-    {% endfor %}
+    
+    <li><a href="/">Home</a></li>
+    
   </ul>
-  <a href="{{ nav.cta.url }}" class="nav-cta">{{ nav.cta.label }}</a>
+  <a href="mailto:JoinRainChek@gmail.com?subject=Request%20RainChek%20Demo&body=Hello%20Rainchek%2C" class="nav-cta">Request demo</a>
 </nav>
 
 <!-- Page Header -->
@@ -362,7 +360,7 @@
   <div class="container">
     <span class="section-label reveal">Legal</span>
     <h1 class="section-title reveal">Privacy <em>Policy</em></h1>
-    <p class="section-sub reveal">{{ privacy.intro }}</p>
+    <p class="section-sub reveal"></p>
   </div>
 </section>
 
@@ -370,10 +368,46 @@
 <section>
   <div class="container">
     <div class="privacy-content reveal">
-      {% for section in privacy.sections %}
-        <h2>{{ section.title }}</h2>
-        <p>{{ section.content }}</p>
-      {% endfor %}
+      
+        <h2>Privacy Policy</h2>
+        <p>Last updated: 2/24/2026<br>This Privacy Policy explains how RainChek ("we," "us," or "our") collects, uses, discloses, and protects your personal information when you visit or interact with our website (the "Site"). By using the Site, you agree to the collection and use of information in accordance with this Privacy Policy.</p>
+      
+        <h2>Information We Collect</h2>
+        <p>We may collect personal information that you voluntarily provide, including: Name, Email address, Phone number, Any information submitted through contact forms, inquiries, or communications. When you access the Site, we may automatically collect certain technical information, such as: IP address, Browser type and version, Device information, Pages visited and usage data, Referring URLs. This data is used for analytics, security, and performance optimization.</p>
+      
+        <h2>How We Use Your Information</h2>
+        <p>We use collected information to: Respond to inquiries and communicate with you; Provide and improve our services; Operate, maintain, and secure the Site; Comply with legal obligations; Analyze website usage and performance. We do not use your personal information for automated decision-making or profiling with legal or significant effects.</p>
+      
+        <h2>Legal Bases for Processing (GDPR)</h2>
+        <p>If you are located in the European Economic Area (EEA), United Kingdom, or Switzerland, we process your personal data under the following lawful bases: Your consent; Performance of a contract or pre-contractual steps; Compliance with legal obligations; Legitimate interests, where those interests do not override your rights.</p>
+      
+        <h2>Cookies and Tracking Technologies</h2>
+        <p>We may use cookies or similar technologies to improve website functionality, analyze traffic, and enhance user experience. You may control or disable cookies through your browser settings. Disabling cookies may limit certain features of the Site.</p>
+      
+        <h2>Data Sharing and Disclosure</h2>
+        <p>We do not sell personal information. We may share personal information with: Service providers who assist in operating the Site or providing services (e.g., hosting, analytics); Legal or regulatory authorities when required by law; Parties involved in a business transfer, merger, or acquisition. All service providers are required to protect personal information and use it only for authorized purposes.</p>
+      
+        <h2>Data Retention</h2>
+        <p>We retain personal information only for as long as necessary to fulfill the purposes described in this Privacy Policy, unless a longer retention period is required or permitted by law.</p>
+      
+        <h2>Data Security</h2>
+        <p>We implement reasonable administrative, technical, and organizational measures to safeguard personal information. However, no method of transmission over the internet or electronic storage is completely secure, and we cannot guarantee absolute security.</p>
+      
+        <h2>International Data Transfers</h2>
+        <p>If you access the Site from outside the United States, your information may be transferred to and processed in the United States or other countries where our service providers operate. We take reasonable steps to ensure appropriate safeguards are in place.</p>
+      
+        <h2>Your Privacy Rights</h2>
+        <p>If you are subject to GDPR, you have the right to: Access your personal data; Correct inaccurate or incomplete data; Request deletion of your data; Restrict or object to processing; Request data portability; Withdraw consent at any time. If you are a California resident, you have the right to: Know what personal information we collect and how it is used; Request access to or deletion of your personal information; Opt out of the sale or sharing of personal information (if applicable); Not be discriminated against for exercising your rights. We do not sell personal information unless explicitly stated otherwise.</p>
+      
+        <h2>Children’s Privacy</h2>
+        <p>This Site is not intended for children under the age of 13 (or 16 where required by applicable law). We do not knowingly collect personal information from children. If we become aware that such information has been collected, we will delete it promptly.</p>
+      
+        <h2>Third-Party Links</h2>
+        <p>The Site may contain links to third-party websites. We are not responsible for the privacy practices or content of those websites. We encourage users to review the privacy policies of any third-party sites they visit.</p>
+      
+        <h2>Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Last updated" date. Continued use of the Site constitutes acceptance of the revised policy.</p>
+      
     </div>
   </div>
 </section>
@@ -383,19 +417,21 @@
   <div class="container">
     <div class="footer-inner">
       <div class="footer-logo">
-        {% if site.logo_url %}
-          <img src="{{ site.logo_url }}" alt="{{ site.company_name }} logo">
-        {% else %}
-          <span>{{ site.company_name }}</span>
-        {% endif %}
+        
+          <img src="./static/logos/RainChek.svg" alt="RainChek logo">
+        
       </div>
       <ul class="footer-links">
         <li><a href="/">Return Home</a></li>
-        {% for link in footer.links %}
-        <li><a href="{{ link.url }}">{{ link.label }}</a></li>
-        {% endfor %}
+        
+        <li><a href="/about.html">Company</a></li>
+        
+        <li><a href="/faq.html">FAQ</a></li>
+        
+        <li><a href="/privacy.html">Privacy</a></li>
+        
       </ul>
-      <div class="footer-copy">{{ footer.copyright }}</div>
+      <div class="footer-copy">© 2026 RainChek, LLC. All rights reserved.</div>
     </div>
   </div>
 </footer>

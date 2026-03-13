@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — RainChek</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Fraunces:ital,wght@0,200;0,300;0,400;1,200;1,300&display=swap');
+
+  :root {
+    --eggshell: #F4F1EC;
+    --eggshell-dark: #EAE5DC;
+    --eggshell-deeper: #DDD8CE;
+    --cobalt: #0B476C;
+    --cobalt-mid: #011936;
+    --cobalt-light: #777DA7;
+    --cobalt-glow: rgba(26, 58, 107, 0.15);
+    --sage: #4A7C6F;
+    --sage-light: #6BA898;
+    --glass-white: rgba(255, 255, 255, 0.55);
+    --glass-eggshell: rgba(244, 241, 236, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.7);
+    --glass-shadow: rgba(26, 58, 107, 0.12);
+    --text-primary: #1A1A2E;
+    --text-secondary: #4A4A6A;
+    --text-muted: #8A8AA8;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--eggshell);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* ── BACKGROUND CANVAS ── */
+  .bg-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background: var(--eggshell);
+    overflow: hidden;
+  }
+
+  .bg-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.35;
+    animation: drift 18s ease-in-out infinite alternate;
+  }
+
+  .bg-blob-1 {
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, var(--cobalt-light), var(--cobalt));
+    top: -200px; right: -150px;
+    animation-delay: 0s;
+  }
+
+  .bg-blob-2 {
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, var(--sage-light), var(--sage));
+    bottom: 100px; left: -100px;
+    animation-delay: -6s;
+  }
+
+  .bg-blob-3 {
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, var(--cobalt-mid), transparent);
+    top: 50%; left: 40%;
+    animation-delay: -12s;
+  }
+
+  .bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(11,71,108,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(11,71,108,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  @keyframes drift {
+    from { transform: translate(0, 0) scale(1); }
+    to   { transform: translate(40px, 30px) scale(1.08); }
+  }
+
+  /* ── LAYOUT ── */
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  section { position: relative; z-index: 1; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    width: calc(100% - 64px);
+    max-width: 1100px;
+    border-radius: 20px;
+    padding: 14px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255,255,255,0.68);
+    backdrop-filter: blur(32px) saturate(2);
+    -webkit-backdrop-filter: blur(32px) saturate(2);
+    border: 1px solid rgba(255,255,255,0.85);
+    box-shadow:
+      0 4px 24px rgba(11,71,108,0.1),
+      inset 0 1px 0 rgba(255,255,255,0.9);
+    animation: slideDown 0.7s cubic-bezier(0.34,1.56,0.64,1) both;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+    to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+
+  .nav-logo {
+    font-family: 'Fraunces', serif;
+    font-size: 1.35rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--cobalt);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+  }
+
+  .nav-logo span { font-weight: 600; font-style: normal; }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-links a:hover { color: var(--cobalt); }
+
+  .nav-cta {
+    background: var(--cobalt);
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 10px;
+    font-weight: 500 !important;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    box-shadow: 0 2px 12px rgba(11,71,108,0.3);
+  }
+
+  .nav-cta:hover {
+    background: var(--cobalt-mid) !important;
+    color: white !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(11,71,108,0.4);
+  }
+
+  /* ── PAGE HEADER ── */
+  .page-header { padding: 160px 0 60px; }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--cobalt-mid);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+  }
+
+  .section-title em { font-style: italic; color: var(--cobalt); }
+
+  .section-sub {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    max-width: 520px;
+  }
+
+  /* ── FAQ ITEMS ── */
+  .faq-content {
+    margin-bottom: 80px;
+  }
+
+  .faq-group {
+    margin-bottom: 48px;
+  }
+
+  .faq-group-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--cobalt);
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(11,71,108,0.1);
+  }
+
+  .faq-item {
+    border-radius: 16px;
+    margin-bottom: 12px;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(24px) saturate(1.8);
+    -webkit-backdrop-filter: blur(24px) saturate(1.8);
+    border: 1px solid rgba(255,255,255,0.8);
+    box-shadow: 0 4px 16px rgba(26,58,107,0.06), inset 0 1px 0 rgba(255,255,255,0.85);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+
+  .faq-item:hover {
+    box-shadow: 0 8px 28px rgba(26,58,107,0.1), inset 0 1px 0 rgba(255,255,255,0.9);
+  }
+
+  .faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+  }
+
+  .faq-question:hover { color: var(--cobalt); }
+
+  .faq-chevron {
+    flex-shrink: 0;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: rgba(11,71,108,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    color: var(--cobalt);
+    transition: transform 0.25s, background 0.2s;
+  }
+
+  .faq-item.open .faq-chevron {
+    transform: rotate(180deg);
+    background: rgba(11,71,108,0.14);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .faq-item.open .faq-answer { max-height: 400px; }
+
+  .faq-answer-inner {
+    padding: 0 24px 20px;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid rgba(11,71,108,0.08);
+    padding: 48px 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-logo {
+    font-family: 'Fraunces', serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--cobalt);
+  }
+
+  .footer-logo span { font-weight: 600; font-style: normal; }
+  .footer-logo img { height: 28px; width: auto; }
+
+  .footer-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .footer-links a {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--cobalt); }
+
+  .footer-copy {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+
+  /* ── SCROLL ANIMATIONS ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.34,1.2,0.64,1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { width: calc(100% - 32px); }
+    .nav-links { display: none; }
+    .footer-inner { flex-direction: column; gap: 24px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Background canvas -->
+<div class="bg-canvas">
+  <div class="bg-blob bg-blob-1"></div>
+  <div class="bg-blob bg-blob-2"></div>
+  <div class="bg-blob bg-blob-3"></div>
+  <div class="bg-grid"></div>
+</div>
+
+<!-- Navigation -->
+<nav>
+  <a href="/" class="nav-logo">
+    
+      <img src="./static/logos/RainChek.svg" style="height: 40px; width: auto;" alt="RainChek logo">
+    
+  </a>
+  <ul class="nav-links">
+    
+    <li><a href="/">Home</a></li>
+    
+  </ul>
+  <a href="mailto:JoinRainChek@gmail.com?subject=Request%20RainChek%20Demo&body=Hello%20Rainchek%2C" class="nav-cta">Request demo</a>
+</nav>
+
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <span class="section-label reveal">Support</span>
+    <h1 class="section-title reveal">Frequently Asked <em>Questions</em></h1>
+    <p class="section-sub reveal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vestibulum congue tellus at fringilla.</p>
+  </div>
+</section>
+
+<!-- FAQ Content -->
+<section>
+  <div class="container">
+    <div class="faq-content">
+      
+      <div class="faq-group reveal">
+        <div class="faq-group-title">General</div>
+        
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Lorem ipsum dolor sit amet, consectetur adipiscing?
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vestibulum congue tellus at fringilla. Curabitur vitae semper sem, eu convallis est. Phasellus habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Sed posuere consectetur est at lobortis fusce dapibus?
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam quis risus eget urna mollis ornare vel eu leo.</div>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Donec sed odio dui cras mattis consectetur?
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</div>
+          </div>
+        </div>
+        
+      </div>
+      
+      <div class="faq-group reveal">
+        <div class="faq-group-title">Refunds & Payouts</div>
+        
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Etiam porta sem malesuada magna mollis euismod?
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.</div>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Vivamus sagittis lacus vel augue laoreet rutrum?
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Sed posuere consectetur est at lobortis. Donec ullamcorper nulla non metus auctor fringilla.</div>
+          </div>
+        </div>
+        
+      </div>
+      
+      <div class="faq-group reveal">
+        <div class="faq-group-title">Venues & Integration</div>
+        
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Aenean lacinia bibendum nulla sed consectetur?
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</div>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Nullam quis risus eget urna mollis ornare vel eu leo?
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Nullam quis risus eget urna mollis ornare vel eu leo. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</div>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Maecenas faucibus mollis interdum pellentesque habitant?
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Maecenas faucibus mollis interdum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</div>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        
+          <img src="./static/logos/RainChek.svg" alt="RainChek logo">
+        
+      </div>
+      <ul class="footer-links">
+        <li><a href="/">Return Home</a></li>
+        
+        <li><a href="/about.html">Company</a></li>
+        
+        <li><a href="/faq.html">FAQ</a></li>
+        
+        <li><a href="/privacy.html">Privacy</a></li>
+        
+      </ul>
+      <div class="footer-copy">© 2026 RainChek, LLC. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>

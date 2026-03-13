@@ -11,11 +11,13 @@
     "nav": {
         "links": [
             {"label": "Features",  "url": "#features"},
-            {"label": "Platform",  "url": "#platform"},
-            {"label": "Pricing",   "url": "#pricing"},
-            {"label": "About",     "url": "#about"}
+            {"label": "About",     "url": "/about.html"}
         ],
-        "cta": {"label": "Request demo", "url": "#"}
+        "sub_links": [
+            {"label": "Home",  "url": "/"}
+
+        ],
+        "cta": {"label": "Request demo", "url": "mailto:JoinRainChek@gmail.com?subject=Request%20RainChek%20Demo&body=Hello%20Rainchek%2C"}
     },
 
 
@@ -23,8 +25,8 @@
         "badge_text": "Now in public beta — trusted by 200+ enterprises",
         "headline": "Safe ticketing that guarantees revenue, rain or shine",
         "subheadline": "RainChek empowers venues to protect their revenue streams, and allows customers to enjoy peace of mind. Our platform offers stress-free ticket refunds - so you can save your customers' nights out and your bottom line.",
-        "primary_cta":   {"label": "Learn more", "url": "#"},
-        "secondary_cta": {"label": "Contact us", "url": "#"},
+        "primary_cta":   {"label": "Learn more", "url": "#features"},
+        "secondary_cta": {"label": "Contact us", "url": "mailto:JoinRainChek@gmail.com?subject=Request%20RainChek%20Demo&body=Hello%20Rainchek%2C"},
         "dashboard": {
             "title": "Analytics Overview",
             "metrics": [
@@ -232,17 +234,161 @@
     "cta": {
         "headline": "Ready to transform <em>your events?</em>",
         "subheadline": "Inquire today to move faster, work smarter, and grow confidently.",
-        "primary":   {"label": "Contact Us", "url": "#"}
+        "primary":   {"label": "Contact Us", "url": "mailto:JoinRainChek@gmail.com?subject=Request%20RainChek%20Demo&body=Hello%20Rainchek%2C"}
     },
 
     "footer": {
         "links": [
-            {"label": "Company", "url": "#"},
-            {"label": "FAQ", "url": "#"},
-            {"label": "Privacy", "url": "/privacy"},
-            {"label": "Terms",   "url": "#"}
+            {"label": "Company", "url": "/about.html"},
+            {"label": "FAQ", "url": "/faq.html"},
+            {"label": "Privacy", "url": "/privacy.html"}
         ],
         "copyright": "© 2026 RainChek, LLC. All rights reserved."
+    },
+
+    "about": {
+        "section_label": "Our Story",
+        "headline": "Built for venues that <em>refuse</em> to lose",
+        "subheadline": "RainChek was born out of frustration — watching venues lose revenue to weather cancellations with no good options for customers or operators. We set out to change that.",
+
+        "mission": {
+            "section_label": "Mission",
+            "headline": "Revenue protection, <em>reimagined</em>",
+            "body_1": "Every year, outdoor venues forfeit millions in revenue to weather events they can't control. Customers lose money on tickets, venues lose trust, and everyone loses out. We built RainChek to close that gap — turning weather risk into a solved problem.",
+            "body_2": "Our platform handles refund requests automatically, partners with leading payment processors for seamless payouts, and gives venues a dashboard to stay in control without lifting a finger.",
+            "stats": [
+                {"value": "200+", "label": "Venues protected"},
+                {"value": "98%",  "label": "Customer satisfaction"},
+                {"value": "$2M+", "label": "Refunds processed"},
+                {"value": "<24h", "label": "Average payout time"}
+            ]
+        },
+
+        "values": {
+            "section_label": "What We Believe",
+            "headline": "Principles that <em>guide</em> us",
+            "subheadline": "We're a small team with strong convictions about how software for the events industry should work.",
+            "items": [
+                {
+                    "icon": "🤝",
+                    "name": "Customer-First, Always",
+                    "description": "A great night out shouldn't end in a billing dispute. We design every part of our platform to put customers at ease and give venues the tools to make things right."
+                },
+                {
+                    "icon": "⚡",
+                    "name": "Automation That Earns Trust",
+                    "description": "Hands-off doesn't mean hands-free of accountability. Our automation is transparent, auditable, and always keeps operators informed."
+                },
+                {
+                    "icon": "🌦️",
+                    "name": "Turn Risk Into Resilience",
+                    "description": "Weather is unpredictable — your revenue doesn't have to be. We help venues plan for the unplannable with confidence."
+                }
+            ]
+        },
+
+        "team": {
+            "section_label": "The Team",
+            "headline": "People behind <em>RainChek</em>",
+            "subheadline": "A focused team of young professionals / occasional concert-goers that understand the event experience.",
+            "members": [
+                {
+                    "name": "Micheal Prince",
+                    "role": "Co-Founder & CEO",
+                    "initials": "MP",
+                    "avatar_url": "",
+                    "avatar_gradient": "linear-gradient(135deg, #0B476C, #777DA7)",
+                    "bio": "(Insert Bio Here)"
+                },
+                {
+                    "name": "Ryan Mathew",
+                    "role": "Co-Founder & CMO",
+                    "initials": "RM",
+                    "avatar_url": "",
+                    "avatar_gradient": "linear-gradient(135deg, #6BA898, #4A7C6F)",
+                    "bio": "(Insert Bio Here)"
+                },
+                {
+                    "name": "William MacIntosh",
+                    "role": "Co-Founder & CRO",
+                    "initials": "WM",
+                    "avatar_url": "",
+                    "avatar_gradient": "linear-gradient(135deg, #D47FB8, #8B1A5A)",
+                    "bio": "(Insert Bio Here)"
+                },
+                {
+                    "name": "Charles Wicklund",
+                    "role": "Co-Founder & CTO",
+                    "initials": "CW",
+                    "avatar_url": "",
+                    "avatar_gradient": "linear-gradient(135deg, #7F9FD4, #1A3A8B)",
+                    "bio": "(Insert Bio Here)"
+                },
+                {
+                    "name": "Milo Cassarino",
+                    "role": "Co-Founder & CPO",
+                    "initials": "MC",
+                    "avatar_url": "",
+                    "avatar_gradient": "linear-gradient(135deg, #D4A87F, #8B561A)",
+                    "bio": "(Insert Bio Here)"
+                }
+                
+                
+            ]
+        }
+    },
+
+    "faq": {
+        "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vestibulum congue tellus at fringilla.",
+        "groups": [
+            {
+                "title": "General",
+                "questions": [
+                    {
+                        "question": "Lorem ipsum dolor sit amet, consectetur adipiscing?",
+                        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vestibulum congue tellus at fringilla. Curabitur vitae semper sem, eu convallis est. Phasellus habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
+                    },
+                    {
+                        "question": "Sed posuere consectetur est at lobortis fusce dapibus?",
+                        "answer": "Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam quis risus eget urna mollis ornare vel eu leo."
+                    },
+                    {
+                        "question": "Donec sed odio dui cras mattis consectetur?",
+                        "answer": "Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a ante venenatis dapibus posuere velit aliquet."
+                    }
+                ]
+            },
+            {
+                "title": "Refunds & Payouts",
+                "questions": [
+                    {
+                        "question": "Etiam porta sem malesuada magna mollis euismod?",
+                        "answer": "Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper."
+                    },
+                    {
+                        "question": "Vivamus sagittis lacus vel augue laoreet rutrum?",
+                        "answer": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Sed posuere consectetur est at lobortis. Donec ullamcorper nulla non metus auctor fringilla."
+                    }
+                ]
+            },
+            {
+                "title": "Venues & Integration",
+                "questions": [
+                    {
+                        "question": "Aenean lacinia bibendum nulla sed consectetur?",
+                        "answer": "Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
+                    },
+                    {
+                        "question": "Nullam quis risus eget urna mollis ornare vel eu leo?",
+                        "answer": "Nullam quis risus eget urna mollis ornare vel eu leo. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit."
+                    },
+                    {
+                        "question": "Maecenas faucibus mollis interdum pellentesque habitant?",
+                        "answer": "Maecenas faucibus mollis interdum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante."
+                    }
+                ]
+            }
+        ]
     },
 
     "privacy" : {

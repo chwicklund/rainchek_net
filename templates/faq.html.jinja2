@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy — {{ site.company_name }}</title>
+<title>FAQ — {{ site.company_name }}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -140,12 +140,10 @@
     font-style: italic;
     color: var(--cobalt);
     letter-spacing: -0.02em;
+    text-decoration: none;
   }
 
-  .nav-logo span {
-    font-weight: 600;
-    font-style: normal;
-  }
+  .nav-logo span { font-weight: 600; font-style: normal; }
 
   .nav-links {
     display: flex;
@@ -184,9 +182,7 @@
   }
 
   /* ── PAGE HEADER ── */
-  .page-header {
-    padding: 160px 0 60px;
-  }
+  .page-header { padding: 160px 0 60px; }
 
   .section-label {
     display: inline-block;
@@ -218,43 +214,93 @@
     max-width: 520px;
   }
 
-  /* ── PRIVACY CONTENT ── */
-  .privacy-content {
-    border-radius: 24px;
-    padding: 48px;
+  /* ── FAQ ITEMS ── */
+  .faq-content {
     margin-bottom: 80px;
+  }
+
+  .faq-group {
+    margin-bottom: 48px;
+  }
+
+  .faq-group-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--cobalt);
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(11,71,108,0.1);
+  }
+
+  .faq-item {
+    border-radius: 16px;
+    margin-bottom: 12px;
     background: rgba(255,255,255,0.55);
     backdrop-filter: blur(24px) saturate(1.8);
     -webkit-backdrop-filter: blur(24px) saturate(1.8);
     border: 1px solid rgba(255,255,255,0.8);
-    box-shadow: 0 8px 32px rgba(26,58,107,0.08), inset 0 1px 0 rgba(255,255,255,0.85);
+    box-shadow: 0 4px 16px rgba(26,58,107,0.06), inset 0 1px 0 rgba(255,255,255,0.85);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
   }
 
-  .privacy-content h2 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--cobalt);
-    margin-top: 36px;
-    margin-bottom: 12px;
+  .faq-item:hover {
+    box-shadow: 0 8px 28px rgba(26,58,107,0.1), inset 0 1px 0 rgba(255,255,255,0.9);
+  }
+
+  .faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-primary);
     letter-spacing: -0.01em;
   }
 
-  .privacy-content h2:first-child { margin-top: 0; }
+  .faq-question:hover { color: var(--cobalt); }
 
-  .privacy-content p {
-    font-size: 0.95rem;
-    font-weight: 300;
-    color: var(--text-secondary);
-    margin-bottom: 18px;
-    line-height: 1.7;
+  .faq-chevron {
+    flex-shrink: 0;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: rgba(11,71,108,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    color: var(--cobalt);
+    transition: transform 0.25s, background 0.2s;
   }
 
-  .privacy-content ul {
-    margin-bottom: 18px;
-    padding-left: 20px;
-    color: var(--text-secondary);
-    font-size: 0.95rem;
+  .faq-item.open .faq-chevron {
+    transform: rotate(180deg);
+    background: rgba(11,71,108,0.14);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .faq-item.open .faq-answer { max-height: 400px; }
+
+  .faq-answer-inner {
+    padding: 0 24px 20px;
+    font-size: 0.9rem;
     font-weight: 300;
+    color: var(--text-secondary);
     line-height: 1.7;
   }
 
@@ -281,11 +327,7 @@
   }
 
   .footer-logo span { font-weight: 600; font-style: normal; }
-
-  .footer-logo img {
-    height: 28px;
-    width: auto;
-  }
+  .footer-logo img { height: 28px; width: auto; }
 
   .footer-links {
     display: flex;
@@ -326,7 +368,6 @@
     nav { width: calc(100% - 32px); }
     .nav-links { display: none; }
     .footer-inner { flex-direction: column; gap: 24px; text-align: center; }
-    .privacy-content { padding: 32px 24px; }
   }
 </style>
 </head>
@@ -342,13 +383,13 @@
 
 <!-- Navigation -->
 <nav>
-  <div class="nav-logo">
+  <a href="/" class="nav-logo">
     {% if site.logo_url %}
       <img src="{{ site.logo_url }}" style="height: 40px; width: auto;" alt="{{ site.company_name }} logo">
     {% else %}
       <span>{{ site.company_name }}</span>
     {% endif %}
-  </div>
+  </a>
   <ul class="nav-links">
     {% for link in nav.sub_links %}
     <li><a href="{{ link.url }}">{{ link.label }}</a></li>
@@ -360,19 +401,31 @@
 <!-- Page Header -->
 <section class="page-header">
   <div class="container">
-    <span class="section-label reveal">Legal</span>
-    <h1 class="section-title reveal">Privacy <em>Policy</em></h1>
-    <p class="section-sub reveal">{{ privacy.intro }}</p>
+    <span class="section-label reveal">Support</span>
+    <h1 class="section-title reveal">Frequently Asked <em>Questions</em></h1>
+    <p class="section-sub reveal">{{ faq.intro }}</p>
   </div>
 </section>
 
-<!-- Privacy Content -->
+<!-- FAQ Content -->
 <section>
   <div class="container">
-    <div class="privacy-content reveal">
-      {% for section in privacy.sections %}
-        <h2>{{ section.title }}</h2>
-        <p>{{ section.content }}</p>
+    <div class="faq-content">
+      {% for group in faq.groups %}
+      <div class="faq-group reveal">
+        <div class="faq-group-title">{{ group.title }}</div>
+        {% for item in group.questions %}
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            {{ item.question }}
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">{{ item.answer }}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
       {% endfor %}
     </div>
   </div>
@@ -413,6 +466,16 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
   reveals.forEach(el => observer.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
 </script>
 
 </body>
